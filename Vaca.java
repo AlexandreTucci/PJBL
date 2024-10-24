@@ -4,8 +4,7 @@ class Vaca extends Animal {
     }
 
     @Override
-    public void morrer() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'morrer'");
+    public void abater() {
+        System.out.println(getNome() + " foi abatido");
     }
 }
