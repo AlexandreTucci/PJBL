@@ -1,4 +1,4 @@
-public class Animal extends SerVivo {
+abstract class Animal extends SerVivo {
     private String tipo;
 
     public Animal(String nome, int idade, String tipo) {
@@ -10,12 +10,21 @@ public class Animal extends SerVivo {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     @Override
     public void crescer() {
         System.out.println(getNome() + " está crescendo!");
     }
+
+    public void procriar() {
+        System.out.println(getNome() + " foi procriado");
+    }
+
+    public void alimentar() {
+        System.out.println(getNome() + " foi alimentada");
+    }
+
+    public void abater() {
+        System.out.println(getNome() + " foi abatido");
+    }
+
 }
