@@ -1,27 +1,29 @@
 import java.util.ArrayList;
 
-public class Fazenda {
+class Fazenda {
     private String nome;
-    private ArrayList<SerVivo> seresVivos;
+    private Jogador dono;
+    private ArrayList<Animal> animais;
+    private ArrayList<Planta> plantas;
 
-    public Fazenda(String nome) {
+    public Fazenda(String nome, Jogador dono) { 
         this.nome = nome;
-        this.seresVivos = new ArrayList<>();
+        this.dono = dono; 
+        this.animais = new ArrayList<>();
+        this.plantas = new ArrayList<>();
+    }
+    public String getNome() {
+        return nome;
     }
 
-    public void adicionarSerVivo(SerVivo ser) {
-        seresVivos.add(ser);
+    public Jogador getDono() { 
+        return dono;
     }
 
-    public ArrayList<SerVivo> getSeresVivos() {
-        return seresVivos;
-    }
-
-    public void mostrarStatus() {
-        System.out.println("Status da Fazenda " + nome + ":");
-        for (SerVivo ser : seresVivos) {
-            System.out.println("Nome: " + ser.getNome() + ", Idade: " + ser.getIdade() + ", Saúde: " + ser.getSaude());
-            ser.crescer();
-        }
+    public void InfoFazenda() {
+        System.out.println("Fazenda: " + nome);
+        System.out.println("Dono: " + dono.getNome());
+        System.out.println("Número de Animais: " + animais.size());
+        System.out.println("Número de Plantas: " + plantas.size());
     }
 }
