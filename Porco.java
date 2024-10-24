@@ -4,6 +4,14 @@ class Porco extends Animal {
     }
 
     @Override
+    public void procriar() {
+        System.out.println(getNome() + " foi procriado");
+    }
+
+    public void alimentar() {
+        System.out.println(getNome() + " foi alimentada");
+    }
+
     public void abater() {
         System.out.println(getNome() + " foi abatido");
     }
