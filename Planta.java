@@ -11,20 +11,11 @@ abstract class Planta extends SerVivo {
     }
 
     @Override
-    public void crescer() {
-        System.out.println(getNome() + " está crescendo!");
-    }
+    public void crescer() {}
+    public void morrer() {}
 
-    public void plantar() {
-        System.out.println(getNome() + " foi plantada");
-    }
-
-    public void alimentar() {
-        System.out.println(getNome() + " foi alimentada");
-    }
-
-    public void colher() {
-        System.out.println(getNome() + " foi colhida");
-    }
+    public void plantar() {System.out.println(getNome() + " foi plantada");}
+    public void regar() {System.out.println(getNome() + " foi regada");}
+    public void colher() {System.out.println(getNome() + " foi colhida");}
 
 }
