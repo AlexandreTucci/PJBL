@@ -82,7 +82,9 @@ class Fazenda {
     }
     public void InfoFazenda() {
         System.out.println(" ");
-        System.out.println("Número de galinhas = " + this.contarGalinhas(this.animais));
+        System.out.println("Número de galinhas = " + this.contar(this.animais, "galinha"));
+        System.out.println("Número de galinhas = " + this.contar(this.animais, "vaca"));
+        System.out.println("Número de galinhas = " + this.contar(this.animais, "porco"));
         System.out.println("Fazenda: " + nome);
         System.out.println("Dono: " + dono.getNome());
 
@@ -100,10 +102,10 @@ class Fazenda {
         }
     }
 
-    public static int contarGalinhas(ArrayList<Animal> animais) {
+    public static int contar(ArrayList<Animal> animais, String tipoAnimal) {
         int contador = 0;
         for (Animal animal : animais) {
-            if (animal.getTipo().equalsIgnoreCase("galinha")) { // Verifica se é "galinha"
+            if (animal.getTipo().equalsIgnoreCase(tipoAnimal)) { 
                 contador++;
             }
         }
