@@ -16,5 +16,7 @@ class Galinha extends Animal {
     public void abater() {
         System.out.println(getNome() + " foi abatido");
     }
+    
 }
+
 

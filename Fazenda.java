@@ -82,9 +82,10 @@ class Fazenda {
     }
     public void InfoFazenda() {
         System.out.println(" ");
-
+        System.out.println("Número de galinhas = " + this.contarGalinhas(this.animais));
         System.out.println("Fazenda: " + nome);
         System.out.println("Dono: " + dono.getNome());
+
 
         System.out.println("Número de Animais: " + animais.size());
         System.out.println("Lista de Animais: ");
@@ -97,5 +98,15 @@ class Fazenda {
         for (Planta planta : plantas) {
             System.out.println( planta.getTipo() + " " + planta.getNome() + "(idade:" + planta.getIdade() + ")" ); // Chama o método toString() de cada animal
         }
+    }
+
+    public static int contarGalinhas(ArrayList<Animal> animais) {
+        int contador = 0;
+        for (Animal animal : animais) {
+            if (animal.getTipo().equalsIgnoreCase("galinha")) { // Verifica se é "galinha"
+                contador++;
+            }
+        }
+        return contador;
     }
 }
