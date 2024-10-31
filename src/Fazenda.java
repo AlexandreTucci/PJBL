@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 class Fazenda {
     private String nome;
@@ -37,6 +38,48 @@ class Fazenda {
             System.out.println(animal.getTipo() + " " + animal.getNome() + " foi adicionado à fazenda " + this.getNome());
         }
     }
+
+    public void removerAnimal(String tipoAnimal) {
+        // Convertemos o tipoAnimal para minúsculas para garantir a correspondência
+        switch (tipoAnimal.toLowerCase()) {
+            case "vaca":
+                Iterator<Animal> iteratorvaca = animais.iterator();
+                while (iteratorvaca.hasNext()) {
+                    Animal animal = iteratorvaca.next();
+                    // Verifica se o tipo corresponde
+                    if (animal.getTipo().equalsIgnoreCase("vaca")) {
+                        iteratorvaca.remove(); // Remove com segurança
+                        break; // Interrompe após remover a primeira ocorrência
+                    }
+                }
+                break;
+                
+            case "galinha":
+                Iterator<Animal> iteratorgalinha = animais.iterator();
+                while (iteratorgalinha.hasNext()) {
+                    Animal animal = iteratorgalinha.next();
+                    // Verifica se o tipo corresponde
+                    if (animal.getTipo().equalsIgnoreCase("galinha")) {
+                        iteratorgalinha.remove(); // Remove com segurança
+                        break; // Interrompe após remover a primeira ocorrência
+                    }
+                }
+                break;
+            
+            case "porco":
+                Iterator<Animal> iteratorporco = animais.iterator();
+                while (iteratorporco.hasNext()) {
+                    Animal animal = iteratorporco.next();
+                    // Verifica se o tipo corresponde
+                    if (animal.getTipo().equalsIgnoreCase("porco")) {
+                        iteratorporco.remove(); // Remove com segurança
+                        break; // Interrompe após remover a primeira ocorrência
+                    }
+                }
+                break;
+        }
+    }
+    
     public void adicionarPlanta(String tipoPlanta, String nomePlanta, int idade) {
         Planta planta = null;
 
