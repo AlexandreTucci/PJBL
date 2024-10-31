@@ -8,12 +8,12 @@ class Porco extends Animal {
     public void morrer() {}
 
     public void procriar() {
-        System.out.println(getNome() + " foi procriado");
+        System.out.println(getTipo() + " foi procriado");
     }
     public void alimentar() {
-        System.out.println(getNome() + " foi alimentada");
+        System.out.println(getTipo() + " foi alimentada");
     }
     public void abater() {
-        System.out.println(getNome() + " foi abatido");
+        System.out.println(getTipo() + " foi abatido");
     }
 }

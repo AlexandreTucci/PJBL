@@ -9,13 +9,13 @@ class Galinha extends Animal {
 
     public void procriar(Fazenda fazenda) {
         fazenda.adicionarAnimal("galinha", 0); 
-        System.out.println(getNome() + " foi procriado");
+        System.out.println(getTipo() + " foi procriado");
     }
     public void alimentar() {
-        System.out.println(getNome() + " foi alimentada");
+        System.out.println(getTipo() + " foi alimentada");
     }
     public void abater() {
-        System.out.println(getNome() + " foi abatido");
+        System.out.println(getTipo() + " foi abatido");
     }
     
 }

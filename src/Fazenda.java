@@ -34,7 +34,7 @@ class Fazenda {
 
         if (animal != null) {
             animais.add(animal);
-            System.out.println(animal.getTipo() + " " + animal.getNome() + " foi adicionado à fazenda " + this.getNome());
+            System.out.println(animal.getTipo() + " foi adicionado à fazenda " + this.getNome());
         }
     }
     public void adicionarPlanta(String tipoPlanta, int idade) {
@@ -59,7 +59,9 @@ class Fazenda {
             System.out.println(planta.getTipo() + " " + " foi adicionado à fazenda " + this.getNome());
         }
     }
-
+    public String getNome(){
+        return nome;
+    }
 
     public void InfoFazenda() {
         System.out.println(" ");

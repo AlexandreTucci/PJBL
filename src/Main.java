@@ -144,7 +144,7 @@ public class Main {
         String nomeAnimal = teclado.next();
         System.out.print("Digite a idade do animal: ");
         int idadeAnimal = teclado.nextInt();
-        fazenda.adicionarAnimal(tipoAnimal, nomeAnimal, idadeAnimal);
+        fazenda.adicionarAnimal(tipoAnimal, idadeAnimal);
         System.out.println("Animal adicionado com sucesso.");
     }
 
@@ -155,13 +155,14 @@ public class Main {
         String nomePlanta = teclado.next();
         System.out.print("Digite a idade da planta: ");
         int idadePlanta = teclado.nextInt();
-        fazenda.adicionarPlanta(tipoPlanta, nomePlanta, idadePlanta);
+        fazenda.adicionarPlanta(tipoPlanta, idadePlanta);
         System.out.println("Planta adicionada com sucesso.");
     }
 
     public static void interagirComAnimal(Fazenda fazenda, Scanner teclado) {
         System.out.print("Digite o nome do animal para interagir: ");
         String nomeAnimal = teclado.next();
+
         Animal animal = fazenda.getAnimalByName(nomeAnimal);
 
         if (animal != null) {
@@ -172,9 +173,9 @@ public class Main {
     }
     public static void interagirComPlanta(Fazenda fazenda, Scanner teclado) {
         System.out.print("Digite o nome da planta para interagir: ");
-        String nomePlanta = teclado.next();
-        Planta planta = fazenda.getPlantaByName(nomePlanta);
-        if (planta != null) {
+        String tipoPlanta = teclado.next();
+
+        if (fazenda.contar(animais) != 0) {
             menuInteracaoPlanta(planta, teclado);
         } else {
             System.out.println("Planta não encontrada.");
@@ -185,7 +186,7 @@ public class Main {
         int option;
 
         do {
-            System.out.println("\nInteragindo com o animal: " + animal.getNome() + " (Tipo: " + animal.getTipo() + ", Idade: " + animal.getIdade() + ")");
+            System.out.println("\nInteragindo com o animal: " + " (Tipo: " + animal.getTipo() + ", Idade: " + animal.getIdade() + ")");
             System.out.println("(1) Alimentar o animal");
             System.out.println("(2) Procriar o animal");
             System.out.println("(3) Mostrar informações do animal");
@@ -220,7 +221,7 @@ public class Main {
         int option;
 
         do {
-            System.out.println("\nInteragindo com o planta: " + planta.getNome() + " (Tipo: " + planta.getTipo() + ", Idade: " + planta.getIdade() + ")");
+            System.out.println("\nInteragindo com o planta: " + " (Tipo: " + planta.getTipo() + ", Idade: " + planta.getIdade() + ")");
             System.out.println("(1) Plantar a planta");
             System.out.println("(2) Regar a planta");
             System.out.println("(3) Mostrar informações da planta");
@@ -255,7 +256,6 @@ public class Main {
     public static void mostrarInfoAnimal(Animal animal) {
         // Mostra as informações do animal
         System.out.println("Informações do animal:");
-        System.out.println("Nome: " + animal.getNome());
         System.out.println("Tipo: " + animal.getTipo());
         System.out.println("Idade: " + animal.getIdade());
         // Adicione mais informações se necessário
@@ -263,7 +263,6 @@ public class Main {
     public static void mostrarInfoPlanta(Planta planta) {
         // Mostra as informações do animal
         System.out.println("Informações do planta:");
-        System.out.println("Nome: " + planta.getNome());
         System.out.println("Tipo: " + planta.getTipo());
         System.out.println("Idade: " + planta.getIdade());
         // Adicione mais informações se necessário

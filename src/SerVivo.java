@@ -3,7 +3,7 @@ public abstract class SerVivo {
     private int idade;
     //private int saude;
 
-    public SerVivo(String nome, int idade) {
+    public SerVivo(int idade) {
 //        this.nome = nome;
         this.idade = idade;
         //this.saude = 100;

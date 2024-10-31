@@ -15,13 +15,13 @@ abstract class Animal extends SerVivo {
     public void morrer() {}
 
     public void procriar(Fazenda fazenda) {
-        fazenda.adicionarAnimal(this.tipo, this.tipo, 0); 
-        System.out.println(getNome() + " foi procriado");
+        fazenda.adicionarAnimal(this.tipo, 0);
+        System.out.println(getTipo() + " foi procriado");
     }
     public void alimentar() {
-        System.out.println(getNome() + " foi alimentada");
+        System.out.println(getTipo() + " foi alimentada");
     }
     public void abater() {
-        System.out.println(getNome() + " foi abatido");
+        System.out.println(getTipo() + " foi abatido");
     }
 }
