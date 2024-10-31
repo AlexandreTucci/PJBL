@@ -14,14 +14,27 @@ public class MenuFazendaPanel extends JPanel {
         JButton novaFazendaButton = new JButton("Nova Fazenda");
         novaFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da nova fazenda:");
+            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
+            if (nomeFazenda == null) {
+                return;
+            }
+            // Verificação de nome vazio ou nulo
+            if (nomeFazenda == null || nomeFazenda.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "O nome da fazenda não pode ser vazio.");
+                return;
+            }
             jogador.criarEAdicionarFazenda(nomeFazenda);
-            JOptionPane.showMessageDialog(null, "Fazenda criada com sucesso!");
+            JOptionPane.showMessageDialog(null, "Fazenda "+ nomeFazenda +" criada com sucesso!");
         });
         add(novaFazendaButton);
 
         JButton entrarFazendaButton = new JButton("Entrar na Fazenda");
         entrarFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da fazenda para entrar:");
+            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
+            if (nomeFazenda == null) {
+                return;
+            }
             Fazenda fazenda = jogador.getFazendaByName(nomeFazenda);
             if (fazenda != null) {
                 gui.abrirMenuInteragirFazenda(fazenda);

@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+//import java.awt.event.ActionEvent;
 
 public class InteragirComFazendaPanel extends JPanel {
 
@@ -12,11 +12,11 @@ public class InteragirComFazendaPanel extends JPanel {
 
         JButton adicionarAnimalButton = new JButton("Adicionar Animal");
         adicionarAnimalButton.addActionListener(e -> {
-            String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal:");
-            String nomeAnimal = JOptionPane.showInputDialog("Digite o nome do animal:");
-            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do animal:"));
+            String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal (Vaca, Porco ou Galinha):");
+            String nomeAnimal = JOptionPane.showInputDialog("Digite a idade do(a) " + tipoAnimal + ":");
+            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a)"+tipoAnimal+nomeAnimal+":"));
             fazenda.adicionarAnimal(tipoAnimal, nomeAnimal, idadeAnimal);
-            JOptionPane.showMessageDialog(null, "Animal adicionado com sucesso!");
+            JOptionPane.showMessageDialog(null, tipoAnimal+nomeAnimal+" adicionado com sucesso!");
         });
         add(adicionarAnimalButton);
 

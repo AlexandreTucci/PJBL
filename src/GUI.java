@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.*;
+//import java.awt.*;
 
 public class GUI extends JFrame {
     private Jogador jogador;

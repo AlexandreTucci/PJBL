@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a26fdb1d-43a7-4715-8550-36ed16ecd1d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuFazendaPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuInicialPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fazenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fazenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Galinha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jogador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Milho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Milho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Planta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Planta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Porco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Porco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SerVivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerVivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Soja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vaca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vaca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,34 +23,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2o8JhAwbSE8YwAN0UQP0XXlpXZ8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexa/OneDrive/Documentos/GitHub/PJBL",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/alexa/OneDrive/Documentos/GitHub/PJBL/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexa/OneDrive/Documentos/GitHub/PJBL&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/alexa/OneDrive/Documentos/GitHub/PJBL/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexa\OneDrive\Documentos\GitHub\PJBL\src" />
@@ -103,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730245387556</updated>
       <workItem from="1730245389704" duration="1282000" />
+      <workItem from="1730328396021" duration="4668000" />
     </task>
     <servers />
   </component>
