@@ -160,12 +160,10 @@ public class Main {
     }
 
     public static void interagirComAnimal(Fazenda fazenda, Scanner teclado) {
-        System.out.print("Digite o nome do animal para interagir: ");
-        String nomeAnimal = teclado.next();
+        System.out.print("Digite o nome da planta para interagir: ");
+        String tipoAnimal = teclado.next();
 
-        Animal animal = fazenda.getAnimalByName(nomeAnimal);
-
-        if (animal != null) {
+        if (fazenda.contar() != 0) {
             menuInteracaoAnimal(animal,fazenda, teclado); // Chama o submenu de interação com o animal
         } else {
             System.out.println("Animal não encontrado.");
@@ -175,8 +173,8 @@ public class Main {
         System.out.print("Digite o nome da planta para interagir: ");
         String tipoPlanta = teclado.next();
 
-        if (fazenda.contar(animais) != 0) {
-            menuInteracaoPlanta(planta, teclado);
+        if (fazenda.contar() != 0) {
+            menuInteracaoPlanta(Animal, teclado);
         } else {
             System.out.println("Planta não encontrada.");
         }
