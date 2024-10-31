@@ -13,6 +13,20 @@ public class InteragirComFazendaPanel extends JPanel {
         JButton adicionarAnimalButton = new JButton("Adicionar Animal");
         adicionarAnimalButton.addActionListener(e -> {
             String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal (Vaca, Porco ou Galinha):");
+            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
+            if (tipoAnimal == null) {
+                return;
+            }
+            // Verificação de tipo de animal vazio ou não permitido
+            tipoAnimal = tipoAnimal.trim();
+            if (tipoAnimal.isEmpty() || 
+            (!tipoAnimal.equalsIgnoreCase("Vaca") && 
+                !tipoAnimal.equalsIgnoreCase("Porco") && 
+                !tipoAnimal.equalsIgnoreCase("Galinha"))) {
+                JOptionPane.showMessageDialog(null, "Tipo de animal inválido. Escolha entre Vaca, Porco ou Galinha.");
+                return;
+            }
+
             String nomeAnimal = JOptionPane.showInputDialog("Digite a idade do(a) " + tipoAnimal + ":");
             int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a)"+tipoAnimal+nomeAnimal+":"));
             fazenda.adicionarAnimal(tipoAnimal, nomeAnimal, idadeAnimal);

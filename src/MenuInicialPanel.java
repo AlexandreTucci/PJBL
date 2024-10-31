@@ -22,6 +22,10 @@ public class MenuInicialPanel extends JPanel {
                 if (nome == null) {
                     return;
                 }
+                if (nome == null || nome.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O nome do jogador não pode ser vazio.");
+                    return;
+                }
                 Jogador jogador = new Jogador(nome);
                 gui.iniciarJogo(jogador);
             }
