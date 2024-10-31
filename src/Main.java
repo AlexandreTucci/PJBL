@@ -164,7 +164,7 @@ public class Main {
         Animal animal = fazenda.getAnimalByName(nomeAnimal);
 
         if (animal != null) {
-            menuInteracaoAnimal(animal, teclado); // Chama o submenu de interação com o animal
+            menuInteracaoAnimal(animal,fazenda, teclado); // Chama o submenu de interação com o animal
         } else {
             System.out.println("Animal não encontrado.");
         }
@@ -180,7 +180,7 @@ public class Main {
         }
     }
 
-    public static void menuInteracaoAnimal(Animal animal, Scanner teclado) {
+    public static void menuInteracaoAnimal(Animal animal,Fazenda fazenda, Scanner teclado) {
         int option;
 
         do {
@@ -198,7 +198,7 @@ public class Main {
                     animal.alimentar(); // Chama o método para alimentar o animal
                     break;
                 case 2:
-                    animal.procriar(); // Chama o método para procriar o animal
+                    animal.procriar(fazenda); // Chama o método para procriar o animal
                     break;
                 case 3:
                     mostrarInfoAnimal(animal); // Mostra informações do animal
