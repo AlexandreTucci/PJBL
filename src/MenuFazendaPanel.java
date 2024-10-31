@@ -31,6 +31,10 @@ public class MenuFazendaPanel extends JPanel {
         JButton entrarFazendaButton = new JButton("Entrar na Fazenda");
         entrarFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da fazenda para entrar:");
+            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
+            if (nomeFazenda == null) {
+                return;
+            }
             Fazenda fazenda = jogador.getFazendaByName(nomeFazenda);
             if (fazenda != null) {
                 gui.abrirMenuInteragirFazenda(fazenda);
