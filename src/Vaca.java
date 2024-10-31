@@ -4,6 +4,9 @@ class Vaca extends Animal {
     }
 
     @Override
+    public void crescer() {}
+    public void morrer() {}
+
     public void procriar() {
         System.out.println(getNome() + " foi procriado");
     }

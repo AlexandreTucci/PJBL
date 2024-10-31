@@ -7,6 +7,7 @@ class Fazenda {
     private ArrayList<Planta> plantas;
 
     public Fazenda(String nome, Jogador dono) { 
+        
         this.nome = nome;
         this.dono = dono; 
         this.animais = new ArrayList<>();
@@ -82,9 +83,12 @@ class Fazenda {
     }
     public void InfoFazenda() {
         System.out.println(" ");
-
+        System.out.println("Número de galinhas = " + this.contar(this.animais, "galinha"));
+        System.out.println("Número de vacas = " + this.contar(this.animais, "vaca"));
+        System.out.println("Número de porcos  = " + this.contar(this.animais, "porco"));
         System.out.println("Fazenda: " + nome);
         System.out.println("Dono: " + dono.getNome());
+
 
         System.out.println("Número de Animais: " + animais.size());
         System.out.println("Lista de Animais: ");
@@ -98,4 +102,16 @@ class Fazenda {
             System.out.println( planta.getTipo() + " " + planta.getNome() + "(idade:" + planta.getIdade() + ")" ); // Chama o método toString() de cada animal
         }
     }
+
+    public static int contar(ArrayList<Animal> animais, String tipoAnimal) {
+        int contador = 0;
+        for (Animal animal : animais) {
+            if (animal.getTipo().equalsIgnoreCase(tipoAnimal)) { 
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+
 }
