@@ -22,6 +22,7 @@ abstract class Animal extends SerVivo {
         System.out.println(getNome() + " foi alimentada");
     }
     public void abater(Fazenda fazenda) {
+        fazenda.removerAnimal(tipo);
         System.out.println(getNome() + " foi abatido");
     }
 }
