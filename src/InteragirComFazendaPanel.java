@@ -27,20 +27,32 @@ public class InteragirComFazendaPanel extends JPanel {
                 return;
             }
 
-            String nomeAnimal = JOptionPane.showInputDialog("Digite a idade do(a) " + tipoAnimal + ":");
-            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a)"+tipoAnimal+nomeAnimal+":"));
-            fazenda.adicionarAnimal(tipoAnimal, nomeAnimal, idadeAnimal);
-            JOptionPane.showMessageDialog(null, tipoAnimal+nomeAnimal+" adicionado com sucesso!");
+            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a) "+tipoAnimal+":"));
+            fazenda.adicionarAnimal(tipoAnimal, null, idadeAnimal);
+            JOptionPane.showMessageDialog(null, tipoAnimal+" adicionado com sucesso!");
         });
         add(adicionarAnimalButton);
 
         JButton adicionarPlantaButton = new JButton("Adicionar Planta");
         adicionarPlantaButton.addActionListener(e -> {
-            String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta:");
-            String nomePlanta = JOptionPane.showInputDialog("Digite o nome da planta:");
-            int idadePlanta = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade da planta:"));
-            fazenda.adicionarPlanta(tipoPlanta, nomePlanta, idadePlanta);
-            JOptionPane.showMessageDialog(null, "Planta adicionada com sucesso!");
+            String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta (Milho, Soja ou Trigo):");
+            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
+            if (tipoPlanta == null) {
+                return;
+            }
+            // Verificação de tipo de animal vazio ou não permitido
+            tipoPlanta = tipoPlanta.trim();
+            if (tipoPlanta.isEmpty() || 
+            (!tipoPlanta.equalsIgnoreCase("Milho") && 
+                !tipoPlanta.equalsIgnoreCase("Soja") && 
+                !tipoPlanta.equalsIgnoreCase("Trigo"))) {
+                JOptionPane.showMessageDialog(null, "Tipo de planta inválido. Escolha entre Milho, Soja ou Trigo.");
+                return;
+            }
+
+            int idadePlanta = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade da planta "+tipoPlanta+":"));
+            fazenda.adicionarPlanta(tipoPlanta, null, idadePlanta);
+            JOptionPane.showMessageDialog(null, tipoPlanta+" adicionada com sucesso!");
         });
         add(adicionarPlantaButton);
 
