@@ -27,7 +27,7 @@ public class InteragirComFazendaPanel extends JPanel {
                 return;
             }
 
-            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a) "+tipoAnimal+":"));
+            int idadeAnimal = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do(a)"+tipoAnimal+":"));
             fazenda.adicionarAnimal(tipoAnimal, null, idadeAnimal);
             JOptionPane.showMessageDialog(null, tipoAnimal+" adicionado com sucesso!");
         });
@@ -43,26 +43,16 @@ public class InteragirComFazendaPanel extends JPanel {
             // Verificação de tipo de animal vazio ou não permitido
             tipoPlanta = tipoPlanta.trim();
             if (tipoPlanta.isEmpty() || 
-<<<<<<< Updated upstream
             (!tipoPlanta.equalsIgnoreCase("Milho") && 
-=======
-                (!tipoPlanta.equalsIgnoreCase("Milho") && 
->>>>>>> Stashed changes
                 !tipoPlanta.equalsIgnoreCase("Soja") && 
                 !tipoPlanta.equalsIgnoreCase("Trigo"))) {
                 JOptionPane.showMessageDialog(null, "Tipo de planta inválido. Escolha entre Milho, Soja ou Trigo.");
                 return;
             }
 
-<<<<<<< Updated upstream
             int idadePlanta = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade da planta "+tipoPlanta+":"));
             fazenda.adicionarPlanta(tipoPlanta, null, idadePlanta);
             JOptionPane.showMessageDialog(null, tipoPlanta+" adicionada com sucesso!");
-=======
-            int idadePlanta = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade da planta:"));
-            fazenda.adicionarPlanta(tipoPlanta, null, idadePlanta);
-            JOptionPane.showMessageDialog(null, "Planta adicionada com sucesso!");
->>>>>>> Stashed changes
         });
         add(adicionarPlantaButton);
 
