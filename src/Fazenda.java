@@ -7,7 +7,7 @@ class Fazenda {
     private ArrayList<Planta> plantas;
 
     public Fazenda(String nome, Jogador dono) { 
-        
+
         this.nome = nome;
         this.dono = dono; 
         this.animais = new ArrayList<>();

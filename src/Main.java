@@ -195,7 +195,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    animal.alimentar(); // Chama o método para alimentar o animal
+                    animal.alimentar(fazenda); // Chama o método para alimentar o animal
                     break;
                 case 2:
                     animal.procriar(fazenda); // Chama o método para procriar o animal
@@ -204,7 +204,7 @@ public class Main {
                     mostrarInfoAnimal(animal); // Mostra informações do animal
                     break;
                 case 4:
-                    animal.abater(); // Chama o método para abater o animal
+                    animal.abater(fazenda); // Chama o método para abater o animal
                     break;
                 case 5:
                     System.out.println("Voltando ao menu da fazenda...");
