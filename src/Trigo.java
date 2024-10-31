@@ -1,6 +1,6 @@
 class Trigo extends Planta{
-    public Trigo(String nome, int idade) {
-        super(nome, idade, "Trigo");
+    public Trigo(int idade) {
+        super(idade, "Trigo");
     }
 
     @Override

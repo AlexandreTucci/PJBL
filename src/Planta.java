@@ -1,8 +1,8 @@
 abstract class Planta extends SerVivo {
     private String tipo;
 
-    public Planta(String nome, int idade, String tipo) {
-        super(nome, idade);
+    public Planta(int idade, String tipo) {
+        super(idade);
         this.tipo = tipo;
     }
 
@@ -14,8 +14,8 @@ abstract class Planta extends SerVivo {
     public void crescer() {}
     public void morrer() {}
 
-    public void plantar() {System.out.println(getNome() + " foi plantada");}
-    public void regar() {System.out.println(getNome() + " foi regada");}
-    public void colher() {System.out.println(getNome() + " foi colhida");}
+    public void plantar() {System.out.println(getTipo() + " foi plantada");}
+    public void regar() {System.out.println(getTipo() + " foi regada");}
+    public void colher() {System.out.println(getTipo() + " foi colhida");}
 
 }

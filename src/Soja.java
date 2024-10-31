@@ -1,6 +1,6 @@
 class Soja extends Planta{
-    public Soja(String nome, int idade) {
-        super(nome, idade, "Soja");
+    public Soja(int idade) {
+        super(idade, "Soja");
     }
 
     @Override

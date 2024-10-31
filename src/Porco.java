@@ -1,6 +1,6 @@
 class Porco extends Animal {
-    public Porco(String nome, int idade) {
-        super(nome, idade, "Porco"); // Passa o tipo "Porco" diretamente
+    public Porco( int idade) {
+        super(idade, "Porco"); // Passa o tipo "Porco" diretamente
     }
 
     @Override

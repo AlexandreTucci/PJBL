@@ -1,8 +1,8 @@
 abstract class Animal extends SerVivo {
     private String tipo;
 
-    public Animal(String nome, int idade, String tipo) {
-        super(nome, idade);
+    public Animal( int idade, String tipo) {
+        super(idade);
         this.tipo = tipo;
     }
 

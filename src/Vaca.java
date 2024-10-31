@@ -1,6 +1,6 @@
 class Vaca extends Animal {
-    public Vaca(String nome, int idade) {
-        super(nome, idade, "Vaca"); // Passa o tipo "Vaca" diretamente
+    public Vaca(int idade) {
+        super(idade, "Vaca"); // Passa o tipo "Vaca" diretamente
     }
 
     @Override

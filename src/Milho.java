@@ -1,6 +1,6 @@
 class Milho extends Planta{
-    public Milho(String nome, int idade) {
-        super(nome, idade, "Milho");
+    public Milho(int idade) {
+        super(idade, "Milho");
     }
 
     @Override
