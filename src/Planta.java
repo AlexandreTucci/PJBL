@@ -16,6 +16,8 @@ abstract class Planta extends SerVivo {
 
     public void plantar() {System.out.println(getNome() + " foi plantada");}
     public void regar() {System.out.println(getNome() + " foi regada");}
-    public void colher() {System.out.println(getNome() + " foi colhida");}
+    public void colher(Fazenda fazenda) {
+        fazenda.colherPlanta(tipo);
+        System.out.println(getNome() + " foi colhido(a)");}
 
 }
