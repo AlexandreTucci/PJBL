@@ -175,7 +175,7 @@ public class Main {
         String nomePlanta = teclado.next();
         Planta planta = fazenda.getPlantaByName(nomePlanta);
         if (planta != null) {
-            menuInteracaoPlanta(planta, teclado);
+            menuInteracaoPlanta(planta,fazenda, teclado);
         } else {
             System.out.println("Planta não encontrada.");
         }
@@ -216,7 +216,7 @@ public class Main {
             }
         } while (option != 5); // Sai do loop e volta ao menu da fazenda ao escolher a opção 5
     }
-    public static void menuInteracaoPlanta(Planta planta, Scanner teclado) {
+    public static void menuInteracaoPlanta(Planta planta,Fazenda fazenda, Scanner teclado) {
         int option;
 
         do {
@@ -240,7 +240,7 @@ public class Main {
                     mostrarInfoPlanta(planta); // Mostra informações do animal
                     break;
                 case 4:
-                    planta.colher(); // Chama o método para abater o animal
+                    planta.colher(fazenda); // Chama o método para abater o animal
                     break;
                 case 5:
                     System.out.println("Voltando ao menu da fazenda...");

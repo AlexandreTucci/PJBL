@@ -40,45 +40,16 @@ class Fazenda {
     }
 
     public void removerAnimal(String tipoAnimal) {
-        // Convertemos o tipoAnimal para minúsculas para garantir a correspondência
-        switch (tipoAnimal.toLowerCase()) {
-            case "vaca":
-                Iterator<Animal> iteratorvaca = animais.iterator();
-                while (iteratorvaca.hasNext()) {
-                    Animal animal = iteratorvaca.next();
-                    // Verifica se o tipo corresponde
-                    if (animal.getTipo().equalsIgnoreCase("vaca")) {
-                        iteratorvaca.remove(); // Remove com segurança
-                        break; // Interrompe após remover a primeira ocorrência
-                    }
-                }
-                break;
-                
-            case "galinha":
-                Iterator<Animal> iteratorgalinha = animais.iterator();
-                while (iteratorgalinha.hasNext()) {
-                    Animal animal = iteratorgalinha.next();
-                    // Verifica se o tipo corresponde
-                    if (animal.getTipo().equalsIgnoreCase("galinha")) {
-                        iteratorgalinha.remove(); // Remove com segurança
-                        break; // Interrompe após remover a primeira ocorrência
-                    }
-                }
-                break;
-            
-            case "porco":
-                Iterator<Animal> iteratorporco = animais.iterator();
-                while (iteratorporco.hasNext()) {
-                    Animal animal = iteratorporco.next();
-                    // Verifica se o tipo corresponde
-                    if (animal.getTipo().equalsIgnoreCase("porco")) {
-                        iteratorporco.remove(); // Remove com segurança
-                        break; // Interrompe após remover a primeira ocorrência
-                    }
-                }
-                break;
+        tipoAnimal = tipoAnimal.toLowerCase(); 
+        for (int i = 0; i < animais.size(); i++) {
+            if (animais.get(i).getTipo().equalsIgnoreCase(tipoAnimal)) {
+                animais.remove(i); 
+                break; 
+            }
         }
     }
+    
+    
     
     public void adicionarPlanta(String tipoPlanta, String nomePlanta, int idade) {
         Planta planta = null;
@@ -102,6 +73,17 @@ class Fazenda {
             System.out.println(planta.getTipo() + " " + planta.getNome() + " foi adicionado à fazenda " + this.getNome());
         }
     }
+
+    public void colherPlanta(String tipoPlanta) {
+        tipoPlanta = tipoPlanta.toLowerCase(); 
+        for (int i = 0; i < plantas.size(); i++) {
+            if (plantas.get(i).getTipo().equalsIgnoreCase(tipoPlanta)) {
+                plantas.remove(i); 
+                break; 
+            }
+        }
+    }
+    
 
     public String getNome(){
         return nome;
