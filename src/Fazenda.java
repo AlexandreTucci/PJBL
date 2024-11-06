@@ -138,5 +138,12 @@ class Fazenda {
         return contador;
     }
 
+    // Adicionando métodos para obter listas de animais e plantas
+    public ArrayList<Animal> getAnimais() {
+        return animais;
+    }
 
+    public ArrayList<Planta> getPlantas() {
+        return plantas;
+    }
 }

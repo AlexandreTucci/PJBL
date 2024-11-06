@@ -18,10 +18,20 @@ public class MenuInicialPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String nome = JOptionPane.showInputDialog("Digite o nome do jogador:");
-                if (nome == null || nome.trim().isEmpty()) {
+                
+                // Verifica se o usuário clicou em "Cancelar"
+                if (nome == null) {
+                    // Operação cancelada pelo usuário
+                    return;
+                }
+
+                // Verifica se o nome está vazio ou em branco
+                if (nome.trim().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "O nome do jogador não pode ser vazio.");
                     return;
                 }
+
+                // Se passar nas verificações, cria o jogador e inicia o jogo
                 Jogador jogador = new Jogador(nome);
                 gui.iniciarJogo(jogador);
             }
