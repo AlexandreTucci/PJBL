@@ -18,10 +18,6 @@ public class MenuInicialPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String nome = JOptionPane.showInputDialog("Digite o nome do jogador:");
-                // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
-                if (nome == null) {
-                    return;
-                }
                 if (nome == null || nome.trim().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "O nome do jogador não pode ser vazio.");
                     return;

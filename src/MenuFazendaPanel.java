@@ -1,12 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
 
 public class MenuFazendaPanel extends JPanel {
 
     public MenuFazendaPanel(GUI gui, Jogador jogador) {
-        setLayout(new GridLayout(4, 1));
+        setLayout(new GridLayout(5, 1));
 
         JLabel label = new JLabel("Bem-vindo, " + jogador.getNome());
         add(label);
@@ -14,11 +12,6 @@ public class MenuFazendaPanel extends JPanel {
         JButton novaFazendaButton = new JButton("Nova Fazenda");
         novaFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da nova fazenda:");
-            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
-            if (nomeFazenda == null) {
-                return;
-            }
-            // Verificação de nome vazio ou nulo
             if (nomeFazenda == null || nomeFazenda.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "O nome da fazenda não pode ser vazio.");
                 return;
@@ -31,10 +24,8 @@ public class MenuFazendaPanel extends JPanel {
         JButton entrarFazendaButton = new JButton("Entrar na Fazenda");
         entrarFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da fazenda para entrar:");
-            // Se o usuário clicar em "Cancelar", nomeFazenda será null. Apenas fecha o diálogo
-            if (nomeFazenda == null) {
-                return;
-            }
+            if (nomeFazenda == null) return;
+
             Fazenda fazenda = jogador.getFazendaByName(nomeFazenda);
             if (fazenda != null) {
                 gui.abrirMenuInteragirFazenda(fazenda);
@@ -43,6 +34,16 @@ public class MenuFazendaPanel extends JPanel {
             }
         });
         add(entrarFazendaButton);
+
+        JButton listarFazendasButton = new JButton("Listar Fazendas");
+        listarFazendasButton.addActionListener(e -> {
+            StringBuilder fazendasList = new StringBuilder("Fazendas:\n");
+            for (Fazenda fazenda : jogador.getFazendas()) {
+                fazendasList.append(fazenda.getNome()).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, fazendasList.toString());
+        });
+        add(listarFazendasButton);
 
         JButton sairButton = new JButton("Sair");
         sairButton.addActionListener(e -> System.exit(0));
