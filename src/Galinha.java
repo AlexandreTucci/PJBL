@@ -8,7 +8,7 @@ class Galinha extends Animal {
     public void morrer() {}
 
     public void procriar(Fazenda fazenda) {
-        fazenda.adicionarAnimal("galinha", "Galinha", 0); 
+        fazenda.adicionarAnimal("galinha", /* "Galinha",*/ 0); 
         System.out.println(getNome() + " foi procriado");
     }
     public void alimentar() {
