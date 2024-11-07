@@ -15,7 +15,7 @@ class Fazenda {
         this.plantas = new ArrayList<>();
     }
 
-    public void adicionarAnimal(String tipoAnimal, String nomeAnimal, int idade) {
+    public void adicionarAnimal(String tipoAnimal, /*String nomeAnimal,*/ int idade) {
         Animal animal = null;
 
         switch (tipoAnimal.toLowerCase()) {
@@ -51,18 +51,18 @@ class Fazenda {
     
     
     
-    public void adicionarPlanta(String tipoPlanta, String nomePlanta, int idade) {
+    public void adicionarPlanta(String tipoPlanta, /*String nomePlanta,*/ int idade) {
         Planta planta = null;
 
         switch (tipoPlanta.toLowerCase()) {
             case "milho":
-                planta = new Milho(nomePlanta, idade);
+                planta = new Milho(/*nomePlanta,*/ idade);
                 break;
             case "trigo":
-                planta = new Trigo(nomePlanta, idade);
+                planta = new Trigo(/*nomePlanta,*/ idade);
                 break;
             case "soja":
-                planta = new Soja(nomePlanta, idade);
+                planta = new Soja(/*nomePlanta,*/ idade);
                 break;
             default:
                 System.out.println("Tipo de planta inválido: " + tipoPlanta);
@@ -148,25 +148,45 @@ class Fazenda {
         return plantas;
     }
 
-    // Método para buscar um animal pelo tipo
-    public Animal getAnimalByTipo(String tipoAnimal) {
-        tipoAnimal = tipoAnimal.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+    // // Método para buscar um animal pelo tipo
+    // public Animal getAnimalByTipo(String tipoAnimal) {
+    //     tipoAnimal = tipoAnimal.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+    //     for (Animal animal : animais) {
+    //         if (animal.getTipo().equalsIgnoreCase(tipoAnimal)) {
+    //             return animal; // Retorna o primeiro animal encontrado com o tipo correspondente
+    //         }
+    //     }
+    //     return null; // Retorna null se o animal não for encontrado
+    // }
+
+    // // Método para buscar uma planta pelo tipo
+    // public Planta getPlantaByTipo(String tipoPlanta) {
+    //     tipoPlanta = tipoPlanta.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+    //     for (Planta planta : plantas) {
+    //         if (planta.getTipo().equalsIgnoreCase(tipoPlanta)) {
+    //             return planta; // Retorna a primeira planta encontrada com o tipo correspondente
+    //         }
+    //     }
+    //     return null; // Retorna null se a planta não for encontrada
+    // }
+
+    public ArrayList<Animal> getAnimaisByTipo(String tipoAnimal) {
+        ArrayList<Animal> animaisTipo = new ArrayList<>();
         for (Animal animal : animais) {
             if (animal.getTipo().equalsIgnoreCase(tipoAnimal)) {
-                return animal; // Retorna o primeiro animal encontrado com o tipo correspondente
+                animaisTipo.add(animal);
             }
         }
-        return null; // Retorna null se o animal não for encontrado
+        return animaisTipo;
     }
-
-    // Método para buscar uma planta pelo tipo
-    public Planta getPlantaByTipo(String tipoPlanta) {
-        tipoPlanta = tipoPlanta.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+    public ArrayList<Planta> getPlantaByTipo(String tipoPlanta) {
+        ArrayList<Planta> plantasTipo = new ArrayList<>();
         for (Planta planta : plantas) {
             if (planta.getTipo().equalsIgnoreCase(tipoPlanta)) {
-                return planta; // Retorna a primeira planta encontrada com o tipo correspondente
+                plantasTipo.add(planta);
             }
         }
-        return null; // Retorna null se a planta não for encontrada
+        return plantasTipo;
     }
+
 }
