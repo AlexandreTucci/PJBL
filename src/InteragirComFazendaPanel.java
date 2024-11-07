@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class InteragirComFazendaPanel extends JPanel {
 
@@ -14,7 +13,7 @@ public class InteragirComFazendaPanel extends JPanel {
         JPanel colunasPanel = new JPanel(new GridLayout(1, 2, 10, 10));
 
         // Coluna da esquerda (Animais)
-        JPanel colunaEsquerda = new JPanel(new GridLayout(6, 1, 5, 5));  // Alterado para 6 linhas para incluir novos botões
+        JPanel colunaEsquerda = new JPanel(new GridLayout(6, 1, 5, 5));
         JButton adicionarAnimalButton = new JButton("Adicionar Animal");
         adicionarAnimalButton.addActionListener(e -> adicionarAnimal(fazenda));
         colunaEsquerda.add(adicionarAnimalButton);
@@ -27,11 +26,11 @@ public class InteragirComFazendaPanel extends JPanel {
         listarAnimaisButton.addActionListener(e -> listarAnimais(fazenda));
         colunaEsquerda.add(listarAnimaisButton);
 
-        JButton alimentarAnimalButton = new JButton("Alimentar Animal");  // Novo botão para alimentar animal
+        JButton alimentarAnimalButton = new JButton("Alimentar Animal");
         alimentarAnimalButton.addActionListener(e -> alimentarAnimal(fazenda));
         colunaEsquerda.add(alimentarAnimalButton);
 
-        JButton procriarAnimalButton = new JButton("Procriar Animal");  // Novo botão para procriar animal
+        JButton procriarAnimalButton = new JButton("Procriar Animal");
         procriarAnimalButton.addActionListener(e -> procriarAnimal(fazenda));
         colunaEsquerda.add(procriarAnimalButton);
 
@@ -40,7 +39,7 @@ public class InteragirComFazendaPanel extends JPanel {
         colunaEsquerda.add(infoFazendaButton);
 
         // Coluna da direita (Plantas)
-        JPanel colunaDireita = new JPanel(new GridLayout(6, 1, 5, 5));  // Alterado para 6 linhas para incluir novos botões
+        JPanel colunaDireita = new JPanel(new GridLayout(6, 1, 5, 5));
         JButton adicionarPlantaButton = new JButton("Adicionar Planta");
         adicionarPlantaButton.addActionListener(e -> adicionarPlanta(fazenda));
         colunaDireita.add(adicionarPlantaButton);
@@ -53,7 +52,7 @@ public class InteragirComFazendaPanel extends JPanel {
         listarPlantasButton.addActionListener(e -> listarPlantas(fazenda));
         colunaDireita.add(listarPlantasButton);
 
-        JButton regarPlantaButton = new JButton("Regar Planta");  // Novo botão para regar planta
+        JButton regarPlantaButton = new JButton("Regar Planta");
         regarPlantaButton.addActionListener(e -> regarPlanta(fazenda));
         colunaDireita.add(regarPlantaButton);
 
@@ -67,153 +66,129 @@ public class InteragirComFazendaPanel extends JPanel {
         add(colunasPanel, BorderLayout.CENTER);
     }
 
-    // Método para adicionar um novo animal na fazenda
     private void adicionarAnimal(Fazenda fazenda) {
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
 
-        // Verificação de tipo válido
         if (!tipoAnimal.equalsIgnoreCase("Vaca") && !tipoAnimal.equalsIgnoreCase("Galinha") && !tipoAnimal.equalsIgnoreCase("Porco")) {
             mostrarMensagem("Erro", "Tipo de animal inválido. Apenas Vaca, Galinha ou Porco são permitidos.");
             return;
         }
 
-        String nomeAnimal = JOptionPane.showInputDialog("Digite o nome do animal:");
-        if (nomeAnimal == null || nomeAnimal.trim().isEmpty()) return;
-
         String idadeStr = JOptionPane.showInputDialog("Digite a idade do animal:");
         if (idadeStr == null || idadeStr.trim().isEmpty()) return;
-        
+
         try {
             int idade = Integer.parseInt(idadeStr);
-            fazenda.adicionarAnimal(tipoAnimal, nomeAnimal, idade);
-            mostrarMensagem("Animal adicionado", "O animal " + nomeAnimal + " foi adicionado com sucesso!");
+            fazenda.adicionarAnimal(tipoAnimal, idade);
+            mostrarMensagem("Animal adicionado", "O animal do tipo " + tipoAnimal + " foi adicionado com sucesso!");
         } catch (NumberFormatException e) {
             mostrarMensagem("Erro", "Idade inválida. Por favor, insira um número.");
         }
     }
 
-    // Método para remover um animal da fazenda
     private void removerAnimal(Fazenda fazenda) {
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal que deseja remover (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
-
-        Animal animal = fazenda.getAnimalByTipo(tipoAnimal);
-        if (animal == null) {
-            mostrarMensagem("Erro", "Não existe nenhum animal do tipo " + tipoAnimal + " na fazenda.");
-            return;
-        }
 
         fazenda.removerAnimal(tipoAnimal);
         mostrarMensagem("Animal removido", "O animal do tipo " + tipoAnimal + " foi removido com sucesso.");
     }
 
-    // Método para listar os animais na fazenda
     private void listarAnimais(Fazenda fazenda) {
         StringBuilder animaisList = new StringBuilder("Animais na fazenda:\n");
         for (Animal animal : fazenda.getAnimais()) {
-            animaisList.append(animal.getTipo()).append(" ").append(animal.getNome())
-                .append(" (Idade: ").append(animal.getIdade()).append(" anos)\n");
+            animaisList.append(animal.getTipo()).append(" (Idade: ").append(animal.getIdade()).append(" anos)\n");
         }
         mostrarMensagem("Lista de Animais", animaisList.toString());
     }
 
-    // Método para alimentar um animal específico na fazenda
+    // Método para alimentar um animal específico na fazenda por tipo
     private void alimentarAnimal(Fazenda fazenda) {
-        String nomeAnimal = JOptionPane.showInputDialog("Digite o nome do animal para alimentar:");
-        Animal animal = fazenda.getAnimalByName(nomeAnimal);
+        String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal para alimentar (Vaca, Galinha, Porco):");
+        if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
+
+        Animal animal = fazenda.getAnimalByTipo(tipoAnimal);
         if (animal != null) {
-            animal.alimentar(fazenda);
-            mostrarMensagem("Animal alimentado", nomeAnimal + " foi alimentado com sucesso!");
+            animal.alimentar();  // Chama o método alimentar diretamente no animal
+            mostrarMensagem("Animal alimentado", tipoAnimal + " foi alimentado com sucesso!");
         } else {
-            mostrarMensagem("Erro", "Animal não encontrado.");
+            mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrado.");
         }
     }
 
-    // Método para procriar um animal específico na fazenda
+    // Método para procriar um animal específico na fazenda por tipo
     private void procriarAnimal(Fazenda fazenda) {
-        String nomeAnimal = JOptionPane.showInputDialog("Digite o nome do animal para procriar:");
-        Animal animal = fazenda.getAnimalByName(nomeAnimal);
+        String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal para procriar (Vaca, Galinha, Porco):");
+        if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
+
+        Animal animal = fazenda.getAnimalByTipo(tipoAnimal);
         if (animal != null) {
-            animal.procriar(fazenda);
-            mostrarMensagem("Procriação", nomeAnimal + " procriou com sucesso!");
+            animal.procriar(fazenda);  // Chama o método procriar diretamente no animal
+            mostrarMensagem("Procriação", "Um novo " + tipoAnimal + " foi procriado com sucesso!");
         } else {
-            mostrarMensagem("Erro", "Animal não encontrado.");
+            mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrado.");
         }
     }
 
-    // Método para exibir informações gerais da fazenda
+
     private void infoFazenda(Fazenda fazenda) {
         String info = "Número de Animais: " + fazenda.getAnimais().size() + "\n" +
                       "Número de Plantas: " + fazenda.getPlantas().size();
         mostrarMensagem("Informações da Fazenda", info);
     }
 
-    // Método para adicionar uma nova planta na fazenda
     private void adicionarPlanta(Fazenda fazenda) {
         String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta (Milho, Soja, Trigo):");
         if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;
 
-        // Verificação de tipo válido
         if (!tipoPlanta.equalsIgnoreCase("Milho") && !tipoPlanta.equalsIgnoreCase("Soja") && !tipoPlanta.equalsIgnoreCase("Trigo")) {
             mostrarMensagem("Erro", "Tipo de planta inválido. Apenas Milho, Soja ou Trigo são permitidos.");
             return;
         }
 
-        String nomePlanta = JOptionPane.showInputDialog("Digite o nome da planta:");
-        if (nomePlanta == null || nomePlanta.trim().isEmpty()) return;
-
         String idadeStr = JOptionPane.showInputDialog("Digite a idade da planta:");
         if (idadeStr == null || idadeStr.trim().isEmpty()) return;
-        
+
         try {
             int idade = Integer.parseInt(idadeStr);
-            fazenda.adicionarPlanta(tipoPlanta, nomePlanta, idade);
-            mostrarMensagem("Planta adicionada", "A planta " + nomePlanta + " foi adicionada com sucesso!");
+            fazenda.adicionarPlanta(tipoPlanta, idade);
+            mostrarMensagem("Planta adicionada", "A planta do tipo " + tipoPlanta + " foi adicionada com sucesso!");
         } catch (NumberFormatException e) {
             mostrarMensagem("Erro", "Idade inválida. Por favor, insira um número.");
         }
     }
 
-    // Método para colher uma planta específica na fazenda
     private void colherPlanta(Fazenda fazenda) {
         String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta que deseja colher (Milho, Soja, Trigo):");
         if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;
-
-        // Verificação de existência da planta
-        Planta planta = fazenda.getPlantaByTipo(tipoPlanta);
-        if (planta == null) {
-            mostrarMensagem("Erro", "Não existe nenhuma planta do tipo " + tipoPlanta + " na fazenda.");
-            return;
-        }
 
         fazenda.colherPlanta(tipoPlanta);
         mostrarMensagem("Planta colhida", "A planta do tipo " + tipoPlanta + " foi colhida com sucesso.");
     }
 
-    // Método para listar as plantas na fazenda
     private void listarPlantas(Fazenda fazenda) {
         StringBuilder plantasList = new StringBuilder("Plantas na fazenda:\n");
         for (Planta planta : fazenda.getPlantas()) {
-            plantasList.append(planta.getTipo()).append(" ").append(planta.getNome())
-                .append(" (Idade: ").append(planta.getIdade()).append(" anos)\n");
+            plantasList.append(planta.getTipo()).append(" (Idade: ").append(planta.getIdade()).append(" anos)\n");
         }
         mostrarMensagem("Lista de Plantas", plantasList.toString());
     }
 
-    // Método para regar uma planta específica na fazenda
+    // Método para regar uma planta específica na fazenda por tipo
     private void regarPlanta(Fazenda fazenda) {
-        String nomePlanta = JOptionPane.showInputDialog("Digite o nome da planta para regar:");
-        Planta planta = fazenda.getPlantaByName(nomePlanta);
+        String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta para regar (Milho, Soja, Trigo):");
+        if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;
+
+        Planta planta = fazenda.getPlantaByTipo(tipoPlanta);
         if (planta != null) {
-            planta.regar();
-            mostrarMensagem("Planta regada", nomePlanta + " foi regada com sucesso!");
+            planta.regar();  // Chama o método regar diretamente na planta
+            mostrarMensagem("Planta regada", tipoPlanta + " foi regada com sucesso!");
         } else {
-            mostrarMensagem("Erro", "Planta não encontrada.");
+            mostrarMensagem("Erro", "Planta do tipo " + tipoPlanta + " não encontrada.");
         }
     }
 
-    // Método auxiliar para exibir uma mensagem de diálogo
     private void mostrarMensagem(String titulo, String mensagem) {
         JOptionPane.showMessageDialog(this, mensagem, titulo, JOptionPane.INFORMATION_MESSAGE);
     }
