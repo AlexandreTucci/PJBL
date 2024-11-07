@@ -1,8 +1,9 @@
+//Animal.java
 abstract class Animal extends SerVivo {
     private String tipo;
 
-    public Animal(String nome, int idade, String tipo) {
-        super(nome, idade);
+    public Animal( int idade, String tipo) {
+        super(idade);
         this.tipo = tipo;
     }
 
@@ -15,14 +16,13 @@ abstract class Animal extends SerVivo {
     public void morrer() {}
 
     public void procriar(Fazenda fazenda) {
-        fazenda.adicionarAnimal(this.tipo, this.tipo, 0); 
-        System.out.println(getNome() + " foi procriado");
+        fazenda.adicionarAnimal(this.tipo, 0);
+        System.out.println(getTipo() + " foi procriado");
     }
-    public void alimentar(Fazenda fazenda) {
-        System.out.println(getNome() + " foi alimentada");
+    public void alimentar() {
+        System.out.println(getTipo() + " foi alimentada");
     }
-    public void abater(Fazenda fazenda) {
-        fazenda.removerAnimal(tipo);
-        System.out.println(getNome() + " foi abatido");
+    public void abater() {
+        System.out.println(getTipo() + " foi abatido");
     }
 }
