@@ -146,4 +146,26 @@ class Fazenda {
     public ArrayList<Planta> getPlantas() {
         return plantas;
     }
+
+    // Método para buscar um animal pelo tipo
+    public Animal getAnimalByTipo(String tipoAnimal) {
+        tipoAnimal = tipoAnimal.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+        for (Animal animal : animais) {
+            if (animal.getTipo().equalsIgnoreCase(tipoAnimal)) {
+                return animal; // Retorna o primeiro animal encontrado com o tipo correspondente
+            }
+        }
+        return null; // Retorna null se o animal não for encontrado
+    }
+
+    // Método para buscar uma planta pelo tipo
+    public Planta getPlantaByTipo(String tipoPlanta) {
+        tipoPlanta = tipoPlanta.toLowerCase(); // Normaliza a busca para maiúsculas/minúsculas
+        for (Planta planta : plantas) {
+            if (planta.getTipo().equalsIgnoreCase(tipoPlanta)) {
+                return planta; // Retorna a primeira planta encontrada com o tipo correspondente
+            }
+        }
+        return null; // Retorna null se a planta não for encontrada
+    }
 }
