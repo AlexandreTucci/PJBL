@@ -91,9 +91,15 @@ public class InteragirComFazendaPanel extends JPanel {
     private void removerAnimal(Fazenda fazenda) {
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal que deseja remover (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
-
-        fazenda.removerAnimal(tipoAnimal);
-        mostrarMensagem("Animal removido", "O animal do tipo " + tipoAnimal + " foi removido com sucesso.");
+        ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
+        if (animais != null && !animais.isEmpty()) {
+            for (Animal animal : animais) {
+                fazenda.removerAnimal(tipoAnimal);
+            }
+            mostrarMensagem("Animal removido", "O animal do tipo " + tipoAnimal + " foi removido com sucesso.");
+        } else {
+        mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrada.");
+    }
     }
 
     private void listarAnimais(Fazenda fazenda) {
