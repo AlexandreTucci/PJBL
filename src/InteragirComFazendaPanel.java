@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class InteragirComFazendaPanel extends JPanel {
 
@@ -108,9 +109,11 @@ public class InteragirComFazendaPanel extends JPanel {
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal para alimentar (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
 
-        Animal animal = fazenda.getAnimalByTipo(tipoAnimal);
-        if (animal != null) {
-            animal.alimentar();  // Chama o método alimentar diretamente no animal
+        ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
+        if (animais != null && !animais.isEmpty()) {
+            for (Animal animal : animais) {
+                animal.alimentar(); // Chama o método alimentar na instância específica do animal }
+            }
             mostrarMensagem("Animal alimentado", tipoAnimal + " foi alimentado com sucesso!");
         } else {
             mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrado.");
@@ -122,9 +125,11 @@ public class InteragirComFazendaPanel extends JPanel {
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal para procriar (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
 
-        Animal animal = fazenda.getAnimalByTipo(tipoAnimal);
-        if (animal != null) {
-            animal.procriar(fazenda);  // Chama o método procriar diretamente no animal
+        ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
+        if (animais != null && !animais.isEmpty()) {
+            for (Animal animal : animais) {
+                animal.procriar(fazenda); // Chama o método alimentar na instância específica do animal }
+            }
             mostrarMensagem("Procriação", "Um novo " + tipoAnimal + " foi procriado com sucesso!");
         } else {
             mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrado.");
@@ -180,9 +185,11 @@ public class InteragirComFazendaPanel extends JPanel {
         String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta para regar (Milho, Soja, Trigo):");
         if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;
 
-        Planta planta = fazenda.getPlantaByTipo(tipoPlanta);
-        if (planta != null) {
-            planta.regar();  // Chama o método regar diretamente na planta
+        ArrayList<Planta> plantas = fazenda.getPlantaByTipo(tipoPlanta);
+        if (plantas != null && !plantas.isEmpty()) {
+            for (Planta planta : plantas) {
+                planta.regar(); // Chama o método alimentar na instância específica do animal }
+            }
             mostrarMensagem("Planta regada", tipoPlanta + " foi regada com sucesso!");
         } else {
             mostrarMensagem("Erro", "Planta do tipo " + tipoPlanta + " não encontrada.");
