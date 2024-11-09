@@ -112,7 +112,7 @@ public class InteragirComFazendaPanel extends JPanel {
         ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
         if (animais != null && !animais.isEmpty()) {
             for (Animal animal : animais) {
-                animal.alimentar(); // Chama o método alimentar na instância específica do animal }
+                animal.alimentar(); // Chama o método alimentar na instância específica do animal
             }
             mostrarMensagem("Animal alimentado", tipoAnimal + " foi alimentado com sucesso!");
         } else {
@@ -128,7 +128,7 @@ public class InteragirComFazendaPanel extends JPanel {
         ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
         if (animais != null && !animais.isEmpty()) {
             for (Animal animal : animais) {
-                animal.procriar(fazenda); // Chama o método alimentar na instância específica do animal }
+                animal.procriar(fazenda); // Chama o método alimentar na instância específica do animal
             }
             mostrarMensagem("Procriação", "Um novo " + tipoAnimal + " foi procriado com sucesso!");
         } else {
@@ -167,9 +167,15 @@ public class InteragirComFazendaPanel extends JPanel {
     private void colherPlanta(Fazenda fazenda) {
         String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta que deseja colher (Milho, Soja, Trigo):");
         if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;
-
-        fazenda.colherPlanta(tipoPlanta);
+        ArrayList<Planta> plantas = fazenda.getPlantaByTipo(tipoPlanta);
+        if (plantas != null && !plantas.isEmpty()) {
+            for (Planta planta : plantas) {
+                planta.colher(fazenda); // Chama o método alimentar na instância específica do animal }
+            }
         mostrarMensagem("Planta colhida", "A planta do tipo " + tipoPlanta + " foi colhida com sucesso.");
+        }else {
+            mostrarMensagem("Erro", "Planta do tipo " + tipoPlanta + " não encontrada.");
+        }
     }
 
     private void listarPlantas(Fazenda fazenda) {
