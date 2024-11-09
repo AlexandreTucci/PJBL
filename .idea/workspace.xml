@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a26fdb1d-43a7-4715-8550-36ed16ecd1d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Fazenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Fazenda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Planta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Planta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fazenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fazenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Galinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Galinha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Milho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Milho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Planta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Planta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Porco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Porco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SerVivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerVivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Soja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vaca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vaca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +50,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "removendoOJogoDoTerminal",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jvict/OneDrive - Grupo Marista/sistemas da informação/2semestre/poo/PJBL",
     "node.js.detected.package.eslint": "true",
@@ -90,6 +105,8 @@
       <workItem from="1730328396021" duration="4668000" />
       <workItem from="1730550511803" duration="120000" />
       <workItem from="1731114060652" duration="2697000" />
+      <workItem from="1731177597058" duration="1773000" />
+      <workItem from="1731181260048" duration="9190000" />
     </task>
     <servers />
   </component>

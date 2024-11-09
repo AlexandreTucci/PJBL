@@ -10,19 +10,7 @@ abstract class Animal extends SerVivo {
     public String getTipo() {
         return tipo;
     }
-
-    @Override
-    public void crescer() {}
-    public void morrer() {}
-
-    public void procriar(Fazenda fazenda) {
-        fazenda.adicionarAnimal(this.tipo, 0);
-        System.out.println(getTipo() + " foi procriado");
-    }
-    public void alimentar() {
-        System.out.println(getTipo() + " foi alimentada");
-    }
-    public void abater() {
-        System.out.println(getTipo() + " foi abatido");
-    }
+    public void procriar(Fazenda fazenda) {}
+    public void alimentar() {}
+    public void abater(Fazenda fazenda) {}
 }

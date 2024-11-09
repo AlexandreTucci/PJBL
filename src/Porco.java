@@ -4,16 +4,17 @@ class Porco extends Animal {
     }
 
     @Override
-    public void crescer() {}
-    public void morrer() {}
-
-    public void procriar() {
+    public void procriar(Fazenda fazenda) {
+        fazenda.adicionarAnimal("porco", 0);
         System.out.println(getTipo() + " foi procriado");
     }
+    @Override
     public void alimentar() {
         System.out.println(getTipo() + " foi alimentada");
     }
-    public void abater() {
+    @Override
+    public void abater(Fazenda fazenda) {
+        fazenda.removerAnimal("porco");
         System.out.println(getTipo() + " foi abatido");
     }
 }

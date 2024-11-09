@@ -1,24 +1,14 @@
 abstract class Planta extends SerVivo {
     private String tipo;
-
     public Planta(int idade, String tipo) {
         super(idade);
         this.tipo = tipo;
     }
-
     public String getTipo() {
         return tipo;
     }
 
-    @Override
-    public void crescer() {}
-    public void morrer() {}
-
-    public void plantar() {System.out.println(getTipo() + " foi plantada");}
-    public void regar() {System.out.println(getTipo() + " foi regada");}
+    public void regar() {}
     public void colher(Fazenda fazenda) {
-        fazenda.colherPlanta(tipo);
         System.out.println(getTipo() + " foi colhido(a)");}
-
 }
-

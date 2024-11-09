@@ -3,7 +3,6 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class InteragirComFazendaPanel extends JPanel {
-
     public InteragirComFazendaPanel(GUI gui, Fazenda fazenda) {
         setLayout(new BorderLayout());
 
@@ -94,12 +93,12 @@ public class InteragirComFazendaPanel extends JPanel {
         ArrayList<Animal> animais = fazenda.getAnimaisByTipo(tipoAnimal);
         if (animais != null && !animais.isEmpty()) {
             for (Animal animal : animais) {
-                fazenda.removerAnimal(tipoAnimal);
+                animal.abater(fazenda);
             }
             mostrarMensagem("Animal removido", "O animal do tipo " + tipoAnimal + " foi removido com sucesso.");
         } else {
-        mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrada.");
-    }
+            mostrarMensagem("Erro", "Animal do tipo " + tipoAnimal + " não encontrada.");
+        }
     }
 
     private void listarAnimais(Fazenda fazenda) {
@@ -142,10 +141,11 @@ public class InteragirComFazendaPanel extends JPanel {
         }
     }
 
-
     private void infoFazenda(Fazenda fazenda) {
-        String info = "Número de Animais: " + fazenda.getAnimais().size() + "\n" +
-                      "Número de Plantas: " + fazenda.getPlantas().size();
+        String info =   "Fazenda: " + fazenda.getNome() + "\n" +
+                        "Dono: " + fazenda.getNomeDono() + "\n" +
+                        "Número de Animais: " + fazenda.getAnimais().size() + "\n" +
+                        "Número de Plantas: " + fazenda.getPlantas().size();
         mostrarMensagem("Informações da Fazenda", info);
     }
 
@@ -192,7 +192,6 @@ public class InteragirComFazendaPanel extends JPanel {
         mostrarMensagem("Lista de Plantas", plantasList.toString());
     }
 
-    // Método para regar uma planta específica na fazenda por tipo
     private void regarPlanta(Fazenda fazenda) {
         String tipoPlanta = JOptionPane.showInputDialog("Digite o tipo da planta para regar (Milho, Soja, Trigo):");
         if (tipoPlanta == null || tipoPlanta.trim().isEmpty()) return;

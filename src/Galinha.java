@@ -3,9 +3,6 @@ class Galinha extends Animal {
         super(/*nome,*/ idade, "Galinha"); // Passa o tipo "Galinha" diretamente
     }
 
-    @Override
-    public void crescer() {}
-    public void morrer() {}
 
     public void procriar(Fazenda fazenda) {
         fazenda.adicionarAnimal("galinha", /* "Galinha",*/ 0); 
@@ -14,10 +11,10 @@ class Galinha extends Animal {
     public void alimentar() {
         System.out.println(getTipo() + " foi alimentada");
     }
-    public void abater() {
+    public void abater(Fazenda fazenda) {
+        fazenda.removerAnimal("galinha");
         System.out.println(getTipo() + " foi abatido");
     }
-    
 }
 
 

@@ -1,13 +1,13 @@
 class Trigo extends Planta{
-    public Trigo(/*String nome,*/ int idade) {
-        super(/*nome,*/ idade, "Trigo");
+    public Trigo(int idade) {
+        super( idade, "Trigo");
     }
 
-    @Override
-    public void crescer() {System.out.println(getTipo() + " está crescendo!");}
-    public void morrer() {System.out.println(getTipo() + " morreu!");}
 
-    public void plantar() {System.out.println(getTipo() + " foi plantada");}
+    @Override
     public void regar() {System.out.println(getTipo() + " foi alimentada");}
-    public void colher() {System.out.println(getTipo() + " foi colhida");}
+    @Override
+    public void colher(Fazenda fazenda) {
+        fazenda.colherPlanta("trigo");
+        System.out.println(getTipo() + " foi colhida");}
 }

@@ -4,19 +4,19 @@ class Vaca extends Animal {
     }
 
     @Override
-    public void crescer() {}
-    public void morrer() {}
-
     public void procriar(Fazenda fazenda) {
-        fazenda.adicionarAnimal("vaca", /* "Vaca",*/ 0); 
+        fazenda.adicionarAnimal("vaca", 0);
         System.out.println(getTipo() + " foi procriado");
     }
 
+    @Override
     public void alimentar() {
         System.out.println(getTipo() + " foi alimentada");
     }
 
-    public void abater() {
+    @Override
+    public void abater(Fazenda fazenda) {
+        fazenda.removerAnimal("vaca");
         System.out.println(getTipo() + " foi abatido");
     }
 }
