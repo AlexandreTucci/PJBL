@@ -1,4 +1,7 @@
-class Soja extends Planta{
+import java.io.Serializable;
+
+class Soja extends Planta implements Serializable {
+    private static final long serialVersionUID = 1L;
     public Soja(int idade) {
         super(idade, "Soja");
     }

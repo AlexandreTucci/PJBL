@@ -1,4 +1,7 @@
-class Galinha extends Animal {
+import java.io.Serializable;
+
+class Galinha extends Animal implements Serializable {
+    private static final long serialVersionUID = 1L;
     public Galinha(/*String nome,*/ int idade) {
         super(/*nome,*/ idade, "Galinha"); // Passa o tipo "Galinha" diretamente
     }

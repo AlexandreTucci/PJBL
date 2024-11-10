@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-
-class Fazenda {
+import java.io.*;
+public class Fazenda implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String nome;
     private Jogador dono;
     private ArrayList<Animal> animais;

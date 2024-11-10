@@ -1,4 +1,7 @@
-abstract class Planta extends SerVivo {
+import java.io.Serializable;
+
+abstract class Planta extends SerVivo implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String tipo;
     public Planta(int idade, String tipo) {
         super(idade);

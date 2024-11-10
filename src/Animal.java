@@ -1,5 +1,8 @@
+import java.io.Serializable;
+
 //Animal.java
-abstract class Animal extends SerVivo {
+abstract class Animal extends SerVivo implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String tipo;
 
     public Animal( int idade, String tipo) {

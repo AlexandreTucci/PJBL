@@ -1,4 +1,7 @@
-public abstract class SerVivo {
+import java.io.Serializable;
+
+public abstract class SerVivo implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int idade;
 
     public SerVivo(int idade) {

@@ -32,4 +32,9 @@ public class GUI extends JFrame {
         setContentPane(new MenuFazendaPanel(this, jogador));
         revalidate();
     }
+
+    public void voltarParaMenuInicial() {
+        setContentPane(new MenuInicialPanel(this));
+        revalidate();
+    }
 }

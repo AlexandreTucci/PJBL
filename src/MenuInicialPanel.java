@@ -4,10 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuInicialPanel extends JPanel {
+    private Jogador jogador;
+
 
     public MenuInicialPanel(GUI gui) {
         setLayout(new BorderLayout());
 
+
+        // Verificação de jogo salvo
         JLabel label = new JLabel("Bem-vindo ao Jogo de Fazenda!", SwingConstants.CENTER);
         add(label, BorderLayout.NORTH);
 
@@ -18,11 +22,10 @@ public class MenuInicialPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String nome = JOptionPane.showInputDialog("Digite o nome do jogador:");
-                
+
                 // Verifica se o usuário clicou em "Cancelar"
                 if (nome == null) {
-                    // Operação cancelada pelo usuário
-                    return;
+                    return;  // Operação cancelada pelo usuário
                 }
 
                 // Verifica se o nome está vazio ou em branco
@@ -32,7 +35,7 @@ public class MenuInicialPanel extends JPanel {
                 }
 
                 // Se passar nas verificações, cria o jogador e inicia o jogo
-                Jogador jogador = new Jogador(nome);
+                jogador = new Jogador(nome);
                 gui.iniciarJogo(jogador);
             }
         });

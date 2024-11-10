@@ -1,4 +1,7 @@
-class Milho extends Planta{
+import java.io.Serializable;
+
+class Milho extends Planta implements Serializable {
+    private static final long serialVersionUID = 1L;
     public Milho(int idade) {
         super( idade, "Milho");
     }
