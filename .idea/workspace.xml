@@ -6,33 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a26fdb1d-43a7-4715-8550-36ed16ecd1d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Fazenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Fazenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/InteragirComFazendaPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/InteragirComFazendaPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Jogador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Jogador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/MenuFazendaPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/MenuFazendaPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PJBL/MenuInicialPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/MenuInicialPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PJBL/MenuInicialPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/MenuInicialPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Milho.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Milho.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Planta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Planta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Soja.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Soja.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PJBL/Trigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJBL/Trigo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Fazenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fazenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Galinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Galinha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jogador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuFazendaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuFazendaPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuInicialPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuInicialPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Milho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Milho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Planta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Planta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Porco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Porco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SerVivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerVivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Soja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vaca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vaca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InteragirComFazendaPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;removendoOJogoDoTerminal&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jvict/OneDrive - Grupo Marista/sistemas da informação/2semestre/poo/PJBL&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -120,6 +97,8 @@
       <workItem from="1731177597058" duration="1773000" />
       <workItem from="1731181260048" duration="9190000" />
       <workItem from="1731258800607" duration="704000" />
+      <workItem from="1731269744630" duration="78000" />
+      <workItem from="1731411865471" duration="1288000" />
     </task>
     <servers />
   </component>

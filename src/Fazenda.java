@@ -15,7 +15,7 @@ public class Fazenda implements Serializable {
         this.plantas = new ArrayList<>();
     }
 
-    public void adicionarAnimal(String tipoAnimal, /*String nomeAnimal,*/ int idade) {
+    public void adicionarAnimal(String tipoAnimal, /*String nomeAnimal,*/ int idade){
         Animal animal = null;
 
         switch (tipoAnimal.toLowerCase()) {

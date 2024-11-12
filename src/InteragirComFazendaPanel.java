@@ -66,7 +66,7 @@ public class InteragirComFazendaPanel extends JPanel {
         add(colunasPanel, BorderLayout.CENTER);
     }
 
-    private void adicionarAnimal(Fazenda fazenda) {
+    private void adicionarAnimal(Fazenda fazenda){
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
 
@@ -80,10 +80,18 @@ public class InteragirComFazendaPanel extends JPanel {
 
         try {
             int idade = Integer.parseInt(idadeStr);
+
+            // Verificação de idade válida
+            if (idade < 0 || idade > 100) { // Exemplo de faixa válida de 0 a 100 anos
+                throw new IdadeInvalidaException(idade);
+            }
+
             fazenda.adicionarAnimal(tipoAnimal, idade);
             mostrarMensagem("Animal adicionado", "O animal do tipo " + tipoAnimal + " foi adicionado com sucesso!");
         } catch (NumberFormatException e) {
             mostrarMensagem("Erro", "Idade inválida. Por favor, insira um número.");
+        } catch (IdadeInvalidaException e) {
+            mostrarMensagem("Erro", e.toString());
         }
     }
 
