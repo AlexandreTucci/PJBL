@@ -13,7 +13,7 @@ abstract class Animal extends SerVivo implements Serializable {
     public String getTipo() {
         return tipo;
     }
-    public void procriar(Fazenda fazenda) {}
-    public void alimentar() {}
-    public void abater(Fazenda fazenda) {}
+    public abstract void procriar(Fazenda fazenda);
+    public abstract void alimentar();
+    public abstract void abater(Fazenda fazenda);
 }

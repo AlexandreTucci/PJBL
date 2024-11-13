@@ -42,7 +42,7 @@ public class Fazenda implements Serializable {
         for (int i = 0; i < animais.size(); i++) {
             if (animais.get(i).getTipo().equalsIgnoreCase(tipoAnimal)) {
                 animais.remove(i); 
-                break; 
+                break;
             }
         }
     }

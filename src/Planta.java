@@ -11,7 +11,6 @@ abstract class Planta extends SerVivo implements Serializable {
         return tipo;
     }
 
-    public void regar() {}
-    public void colher(Fazenda fazenda) {
-        System.out.println(getTipo() + " foi colhido(a)");}
+    public abstract void regar();
+    public abstract void colher(Fazenda fazenda);
 }

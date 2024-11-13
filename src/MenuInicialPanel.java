@@ -59,7 +59,7 @@ public class MenuInicialPanel extends JPanel {
         add(buttonsPanel, BorderLayout.CENTER);
 
         // Adiciona o GIF abaixo dos botões
-        ImageIcon gifIcon = new ImageIcon("C:\\Users\\alexa\\OneDrive\\Documentos\\GitHub\\PJBL\\GIF_tratorzin.gif"); // Substitua pelo caminho correto do seu GIF
+        ImageIcon gifIcon = new ImageIcon("../PJBL/GIF_tratorzin.gif"); // Substitua pelo caminho correto do seu GIF
         JLabel gifLabel = new JLabel(gifIcon);
         add(gifLabel, BorderLayout.SOUTH);
     }

@@ -115,6 +115,7 @@ public class InteragirComFazendaPanel extends JPanel {
         if (animais != null && !animais.isEmpty()) {
             for (Animal animal : animais) {
                 animal.abater(fazenda);
+                break;
             }
             mostrarMensagem("Animal removido", "O animal do tipo " + tipoAnimal + " foi removido com sucesso.");
         } else {
@@ -198,6 +199,7 @@ public class InteragirComFazendaPanel extends JPanel {
         if (plantas != null && !plantas.isEmpty()) {
             for (Planta planta : plantas) {
                 planta.colher(fazenda); // Chama o método alimentar na instância específica do animal }
+                break;
             }
         mostrarMensagem("Planta colhida", "A planta do tipo " + tipoPlanta + " foi colhida com sucesso.");
         }else {
