@@ -10,14 +10,17 @@ public class InteragirComFazendaPanel extends JPanel {
         setBackground(new Color(240, 230, 140)); // Fundo amarelo do painel
 
         JLabel label = new JLabel("Interações com a fazenda " + fazenda.getNome(), SwingConstants.CENTER);
+        label.setFont(new Font("Serif", Font.BOLD, 24));
+        label.setForeground(Color.BLACK);
         add(label, BorderLayout.NORTH);
 
         // Painel principal com duas colunas
-        JPanel colunasPanel = new JPanel(new GridLayout(1, 2, 10, 10));
+        JPanel colunasPanel = new JPanel(new GridLayout(1, 2, 20, 20));  // Alterei o espaçamento para 20
         colunasPanel.setBackground(new Color(240, 230, 140));
+        colunasPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));  // Espaçamento de 20px ao redor
 
         // Coluna da esquerda (Animais)
-        JPanel colunaEsquerda = new JPanel(new GridLayout(6, 1, 5, 5));
+        JPanel colunaEsquerda = new JPanel(new GridLayout(6, 1, 10, 10)); // Espaçamento entre os botões
         colunaEsquerda.setBackground(new Color(240, 230, 140));
         
         // Configurações de estilo para os botões
@@ -40,7 +43,7 @@ public class InteragirComFazendaPanel extends JPanel {
         colunaEsquerda.add(infoFazendaButton);
 
         // Coluna da direita (Plantas)
-        JPanel colunaDireita = new JPanel(new GridLayout(6, 1, 5, 5));
+        JPanel colunaDireita = new JPanel(new GridLayout(6, 1, 10, 10)); // Espaçamento entre os botões
         colunaDireita.setBackground(new Color(240, 230, 140));
 
         JButton adicionarPlantaButton = criarBotaoVerde("Adicionar Planta", e -> adicionarPlanta(fazenda));
@@ -66,7 +69,7 @@ public class InteragirComFazendaPanel extends JPanel {
 
     private JButton criarBotaoVerde(String texto, ActionListener acao) {
         JButton botao = new JButton(texto);
-        botao.setBackground(new Color(50, 205, 50));
+        botao.setBackground(new Color(144, 238, 144));
         botao.setForeground(Color.BLACK); // Texto branco
         botao.setFocusPainted(false);
         botao.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2, true)); // Borda arredondada

@@ -14,15 +14,17 @@ public class MenuInicialPanel extends JPanel {
 
         // Verificação de jogo salvo
         JLabel label = new JLabel("Bem-vindo ao Jogo de Fazenda!", SwingConstants.CENTER);
+        label.setFont(new Font("Serif", Font.BOLD, 24));
+        label.setForeground(Color.BLACK);
         add(label, BorderLayout.NORTH);
 
         JButton novoJogoButton = new JButton("Novo Jogo");
         JButton sairButton = new JButton("Sair");
 
         // Define o fundo vermelho mais forte para os botões
-        novoJogoButton.setBackground(new Color(255, 51, 51)); // Vermelho mais intenso
+        novoJogoButton.setBackground(new Color(144, 238, 144)); // Vermelho mais intenso
         novoJogoButton.setForeground(Color.BLACK); // Texto branco para contraste
-        sairButton.setBackground(new Color(255, 51, 51));
+        sairButton.setBackground(new Color(255, 160, 122));
         sairButton.setForeground(Color.BLACK);
 
         novoJogoButton.addActionListener(new ActionListener() {
@@ -55,5 +57,10 @@ public class MenuInicialPanel extends JPanel {
         buttonsPanel.add(sairButton);
 
         add(buttonsPanel, BorderLayout.CENTER);
+
+        // Adiciona o GIF abaixo dos botões
+        ImageIcon gifIcon = new ImageIcon("C:\\Users\\alexa\\OneDrive\\Documentos\\GitHub\\PJBL\\GIF_tratorzin.gif"); // Substitua pelo caminho correto do seu GIF
+        JLabel gifLabel = new JLabel(gifIcon);
+        add(gifLabel, BorderLayout.SOUTH);
     }
 }
