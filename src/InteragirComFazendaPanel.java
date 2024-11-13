@@ -1,63 +1,61 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class InteragirComFazendaPanel extends JPanel {
     public InteragirComFazendaPanel(GUI gui, Fazenda fazenda) {
         setLayout(new BorderLayout());
+        setBackground(new Color(240, 230, 140)); // Fundo amarelo do painel
 
         JLabel label = new JLabel("Interações com a fazenda " + fazenda.getNome(), SwingConstants.CENTER);
         add(label, BorderLayout.NORTH);
 
         // Painel principal com duas colunas
         JPanel colunasPanel = new JPanel(new GridLayout(1, 2, 10, 10));
+        colunasPanel.setBackground(new Color(240, 230, 140));
 
         // Coluna da esquerda (Animais)
         JPanel colunaEsquerda = new JPanel(new GridLayout(6, 1, 5, 5));
-        JButton adicionarAnimalButton = new JButton("Adicionar Animal");
-        adicionarAnimalButton.addActionListener(e -> adicionarAnimal(fazenda));
+        colunaEsquerda.setBackground(new Color(240, 230, 140));
+        
+        // Configurações de estilo para os botões
+        JButton adicionarAnimalButton = criarBotaoVerde("Adicionar Animal", e -> adicionarAnimal(fazenda));
         colunaEsquerda.add(adicionarAnimalButton);
 
-        JButton removerAnimalButton = new JButton("Remover Animal");
-        removerAnimalButton.addActionListener(e -> removerAnimal(fazenda));
+        JButton removerAnimalButton = criarBotaoVerde("Remover Animal", e -> removerAnimal(fazenda));
         colunaEsquerda.add(removerAnimalButton);
 
-        JButton listarAnimaisButton = new JButton("Listar Animais");
-        listarAnimaisButton.addActionListener(e -> listarAnimais(fazenda));
+        JButton listarAnimaisButton = criarBotaoVerde("Listar Animais", e -> listarAnimais(fazenda));
         colunaEsquerda.add(listarAnimaisButton);
 
-        JButton alimentarAnimalButton = new JButton("Alimentar Animal");
-        alimentarAnimalButton.addActionListener(e -> alimentarAnimal(fazenda));
+        JButton alimentarAnimalButton = criarBotaoVerde("Alimentar Animal", e -> alimentarAnimal(fazenda));
         colunaEsquerda.add(alimentarAnimalButton);
 
-        JButton procriarAnimalButton = new JButton("Procriar Animal");
-        procriarAnimalButton.addActionListener(e -> procriarAnimal(fazenda));
+        JButton procriarAnimalButton = criarBotaoVerde("Procriar Animal", e -> procriarAnimal(fazenda));
         colunaEsquerda.add(procriarAnimalButton);
 
-        JButton infoFazendaButton = new JButton("Informações da Fazenda");
-        infoFazendaButton.addActionListener(e -> infoFazenda(fazenda));
+        JButton infoFazendaButton = criarBotaoVerde("Informações da Fazenda", e -> infoFazenda(fazenda));
         colunaEsquerda.add(infoFazendaButton);
 
         // Coluna da direita (Plantas)
         JPanel colunaDireita = new JPanel(new GridLayout(6, 1, 5, 5));
-        JButton adicionarPlantaButton = new JButton("Adicionar Planta");
-        adicionarPlantaButton.addActionListener(e -> adicionarPlanta(fazenda));
+        colunaDireita.setBackground(new Color(240, 230, 140));
+
+        JButton adicionarPlantaButton = criarBotaoVerde("Adicionar Planta", e -> adicionarPlanta(fazenda));
         colunaDireita.add(adicionarPlantaButton);
 
-        JButton colherPlantaButton = new JButton("Colher Planta");
-        colherPlantaButton.addActionListener(e -> colherPlanta(fazenda));
+        JButton colherPlantaButton = criarBotaoVerde("Colher Planta", e -> colherPlanta(fazenda));
         colunaDireita.add(colherPlantaButton);
 
-        JButton listarPlantasButton = new JButton("Listar Plantas");
-        listarPlantasButton.addActionListener(e -> listarPlantas(fazenda));
+        JButton listarPlantasButton = criarBotaoVerde("Listar Plantas", e -> listarPlantas(fazenda));
         colunaDireita.add(listarPlantasButton);
 
-        JButton regarPlantaButton = new JButton("Regar Planta");
-        regarPlantaButton.addActionListener(e -> regarPlanta(fazenda));
+        JButton regarPlantaButton = criarBotaoVerde("Regar Planta", e -> regarPlanta(fazenda));
         colunaDireita.add(regarPlantaButton);
 
-        JButton voltarButton = new JButton("Voltar ao Menu da Fazenda");
-        voltarButton.addActionListener(e -> gui.voltarParaMenuFazenda());
+        JButton voltarButton = criarBotaoVerde("Voltar ao Menu da Fazenda", e -> gui.voltarParaMenuFazenda());
         colunaDireita.add(voltarButton);
 
         colunasPanel.add(colunaEsquerda);
@@ -66,6 +64,18 @@ public class InteragirComFazendaPanel extends JPanel {
         add(colunasPanel, BorderLayout.CENTER);
     }
 
+    private JButton criarBotaoVerde(String texto, ActionListener acao) {
+        JButton botao = new JButton(texto);
+        botao.setBackground(new Color(50, 205, 50));
+        botao.setForeground(Color.BLACK); // Texto branco
+        botao.setFocusPainted(false);
+        botao.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2, true)); // Borda arredondada
+        botao.setOpaque(true);
+        botao.setBorderPainted(false);
+        botao.setFont(new Font("Arial", Font.BOLD, 14));
+        botao.addActionListener(acao);
+        return botao;
+    }
     private void adicionarAnimal(Fazenda fazenda){
         String tipoAnimal = JOptionPane.showInputDialog("Digite o tipo do animal (Vaca, Galinha, Porco):");
         if (tipoAnimal == null || tipoAnimal.trim().isEmpty()) return;
