@@ -4,28 +4,31 @@ import java.awt.*;
 public class MenuFazendaPanel extends JPanel {
 
     public MenuFazendaPanel(GUI gui, Jogador jogador) {
-        setLayout(new GridLayout(5, 1));
+        setLayout(new BorderLayout());
 
-        JLabel label = new JLabel("Bem-vindo, " + jogador.getNome());
-        add(label);
+        JLabel label = new JLabel("Bem-vindo, " + jogador.getNome(), SwingConstants.CENTER);
+        add(label, BorderLayout.NORTH);
+
+        // Painel central para os botões
+        JPanel botoesPanel = new JPanel();
+        botoesPanel.setLayout(new GridLayout(3, 2, 10, 10)); // 3 linhas, 2 colunas, espaçamento de 10 pixels
 
         JButton salvarButton = new JButton("Salvar Jogo");
         salvarButton.addActionListener(e -> {
             if (jogador != null) {
-                Persistencia.salvarJogo(jogador, "jogoSalvo.dat");  // Salva o jogo no arquivo "jogoSalvo.dat"
+                Persistencia.salvarJogo(jogador, "jogoSalvo.dat");
+                Persistencia.salvarJogoComoTexto(jogador, "jogoSalvo.txt");
                 System.out.println("Jogo salvo com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(null, "Nenhum jogo em andamento para salvar.");
             }
         });
-        add(salvarButton);
-
+        botoesPanel.add(salvarButton);
 
         JButton novaFazendaButton = new JButton("Nova Fazenda");
         novaFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da nova fazenda:");
             if (nomeFazenda == null) {
-                // Operação cancelada pelo usuário
                 return;
             }
             if (nomeFazenda.trim().isEmpty()) {
@@ -35,13 +38,12 @@ public class MenuFazendaPanel extends JPanel {
             jogador.criarEAdicionarFazenda(nomeFazenda);
             JOptionPane.showMessageDialog(null, "Fazenda " + nomeFazenda + " criada com sucesso!");
         });
-        add(novaFazendaButton);
+        botoesPanel.add(novaFazendaButton);
 
         JButton entrarFazendaButton = new JButton("Entrar na Fazenda");
         entrarFazendaButton.addActionListener(e -> {
             String nomeFazenda = JOptionPane.showInputDialog("Digite o nome da fazenda para entrar:");
             if (nomeFazenda == null) {
-                // Operação cancelada pelo usuário
                 return;
             }
             if (nomeFazenda.trim().isEmpty()) {
@@ -56,7 +58,7 @@ public class MenuFazendaPanel extends JPanel {
                 JOptionPane.showMessageDialog(null, "Fazenda não encontrada.");
             }
         });
-        add(entrarFazendaButton);
+        botoesPanel.add(entrarFazendaButton);
 
         JButton listarFazendasButton = new JButton("Listar Fazendas");
         listarFazendasButton.addActionListener(e -> {
@@ -66,14 +68,16 @@ public class MenuFazendaPanel extends JPanel {
             }
             JOptionPane.showMessageDialog(null, fazendasList.toString());
         });
-        add(listarFazendasButton);
+        botoesPanel.add(listarFazendasButton);
 
-        JButton voltarMenuInicialButton = new JButton("Voltar para menu incial");
+        JButton voltarMenuInicialButton = new JButton("Voltar para menu inicial");
         voltarMenuInicialButton.addActionListener(e -> gui.voltarParaMenuInicial());
-        add(voltarMenuInicialButton);
+        botoesPanel.add(voltarMenuInicialButton);
 
         JButton sairButton = new JButton("Sair");
         sairButton.addActionListener(e -> System.exit(0));
-        add(sairButton);
+        botoesPanel.add(sairButton);
+
+        add(botoesPanel, BorderLayout.CENTER);
     }
 }

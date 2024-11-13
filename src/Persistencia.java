@@ -1,5 +1,6 @@
 import java.io.*;
 
+
 public class Persistencia {
 
     public static void salvarJogo(Jogador jogador, String nomeArquivo) {
@@ -8,6 +9,18 @@ public class Persistencia {
             System.out.println("Jogo salvo com sucesso!");
         } catch (IOException e) {
             System.out.println("Erro ao salvar o jogo: " + e.getMessage());
+        }
+    }
+
+    // Novo método para salvar em .txt legível
+    public static void salvarJogoComoTexto(Jogador jogador, String nomeArquivo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
+            writer.write("Nome: " + jogador.getNome() + "\n");
+            writer.write("Fazendas: " + jogador.getFazendas() + "\n");
+            // Adicione mais propriedades conforme necessário
+            System.out.println("Jogo salvo como texto em " + nomeArquivo);
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar o jogo como texto: " + e.getMessage());
         }
     }
 
