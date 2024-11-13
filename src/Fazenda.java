@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.io.*;
 public class Fazenda implements Serializable {
     private static final long serialVersionUID = 1L;
