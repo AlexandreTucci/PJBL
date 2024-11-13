@@ -2,15 +2,31 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class MenuInicialPanel extends JPanel {
     private Jogador jogador;
+    private ImageIcon backgroundGif;
 
     public MenuInicialPanel(GUI gui) {
         setLayout(new BorderLayout());
 
-        // Define o fundo verde suave para o painel principal
-        setBackground(new Color(204, 255, 204)); // Verde claro suave
+        // Array de caminhos para GIFs
+        String[] gifPaths = {
+            "../PJBL/GIFs/GIF_tratorzin.gif",
+            "../PJBL/GIFs/GIF_galinhaandando.gif",
+            "../PJBL/GIFs/GIF_pigFungando.gif",
+            "../PJBL/GIFs/GIF_vacaFungando.gif",
+            "../PJBL/GIFs/GIF_vaquinhasCoracao.gif"
+        };
+
+        // Seleciona um GIF aleatório
+        Random random = new Random();
+        int randomIndex = random.nextInt(gifPaths.length);
+        backgroundGif = new ImageIcon(gifPaths[randomIndex]);
+
+        // Define o fundo transparente para sobreposição dos componentes
+        setOpaque(false);
 
         // Verificação de jogo salvo
         JLabel label = new JLabel("Bem-vindo ao Jogo de Fazenda!", SwingConstants.CENTER);
@@ -21,10 +37,9 @@ public class MenuInicialPanel extends JPanel {
         JButton novoJogoButton = new JButton("Novo Jogo");
         JButton sairButton = new JButton("Sair");
 
-        // Define o fundo vermelho mais forte para os botões
-        novoJogoButton.setBackground(new Color(144, 238, 144)); // Vermelho mais intenso
-        novoJogoButton.setForeground(Color.BLACK); // Texto branco para contraste
-        sairButton.setBackground(new Color(255, 160, 122));
+        novoJogoButton.setBackground(new Color(144, 238, 144)); // Verde claro
+        novoJogoButton.setForeground(Color.BLACK);
+        sairButton.setBackground(new Color(255, 160, 122)); // Laranja claro
         sairButton.setForeground(Color.BLACK);
 
         novoJogoButton.addActionListener(new ActionListener() {
@@ -32,18 +47,11 @@ public class MenuInicialPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String nome = JOptionPane.showInputDialog("Digite o nome do jogador:");
 
-                // Verifica se o usuário clicou em "Cancelar"
-                if (nome == null) {
-                    return;  // Operação cancelada pelo usuário
-                }
-
-                // Verifica se o nome está vazio ou em branco
-                if (nome.trim().isEmpty()) {
+                if (nome == null || nome.trim().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "O nome do jogador não pode ser vazio.");
                     return;
                 }
 
-                // Se passar nas verificações, cria o jogador e inicia o jogo
                 jogador = new Jogador(nome);
                 gui.iniciarJogo(jogador);
             }
@@ -52,15 +60,20 @@ public class MenuInicialPanel extends JPanel {
         sairButton.addActionListener(e -> System.exit(0));
 
         JPanel buttonsPanel = new JPanel();
-        buttonsPanel.setBackground(new Color(204, 255, 204)); // Fundo verde claro suave
+        buttonsPanel.setBackground(new Color(0, 0, 0, 0)); // Fundo transparente para ver o GIF
         buttonsPanel.add(novoJogoButton);
         buttonsPanel.add(sairButton);
 
         add(buttonsPanel, BorderLayout.CENTER);
+    }
 
-        // Adiciona o GIF abaixo dos botões
-        ImageIcon gifIcon = new ImageIcon("../PJBL/GIF_tratorzin.gif"); // Substitua pelo caminho correto do seu GIF
-        JLabel gifLabel = new JLabel(gifIcon);
-        add(gifLabel, BorderLayout.SOUTH);
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        // Desenha o GIF de fundo
+        if (backgroundGif != null) {
+            g.drawImage(backgroundGif.getImage(), 0, 0, getWidth(), getHeight(), this);
+        }
     }
 }
