@@ -1,2 +1,3 @@
-Nome: Mirella
-Fazendas: [Fazenda@17fba92b]
+Jogador: Alexandre
+Fazendas:
+ - fazenda 1

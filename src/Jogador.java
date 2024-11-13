@@ -35,4 +35,15 @@ public class Jogador implements Serializable {
         }
         return null; // Retorna null se a fazenda não for encontrada
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Jogador: ").append(nome).append("\n");
+        sb.append("Fazendas:\n");
+        for (Fazenda fazenda : fazendas) {
+            sb.append(" - ").append(fazenda.getNome()).append("\n");
+        }
+        return sb.toString();
+    }
 }

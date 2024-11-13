@@ -19,20 +19,7 @@ public class MenuFazendaPanel extends JPanel {
         // Define o fundo verde suave para o painel dos botões
         botoesPanel.setBackground(new Color(204, 255, 204)); // Verde claro suave
 
-        JButton salvarButton = new JButton("Salvar Jogo");
-        salvarButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
-        salvarButton.setForeground(Color.BLACK); // Define o texto preto para o botão
-        salvarButton.addActionListener(e -> {
-            if (jogador != null) {
-                Persistencia.salvarJogo(jogador, "jogoSalvo.dat");
-                Persistencia.salvarJogoComoTexto(jogador, "jogoSalvo.txt");
-                System.out.println("Jogo salvo com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Nenhum jogo em andamento para salvar.");
-            }
-        });
-        botoesPanel.add(salvarButton);
-
+        // Botão Nova Fazenda
         JButton novaFazendaButton = new JButton("Nova Fazenda");
         novaFazendaButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
         novaFazendaButton.setForeground(Color.BLACK);
@@ -50,6 +37,14 @@ public class MenuFazendaPanel extends JPanel {
         });
         botoesPanel.add(novaFazendaButton);
 
+        // Botão Voltar para menu inicial
+        JButton voltarMenuInicialButton = new JButton("Voltar para menu inicial");
+        voltarMenuInicialButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
+        voltarMenuInicialButton.setForeground(Color.BLACK);
+        voltarMenuInicialButton.addActionListener(e -> gui.voltarParaMenuInicial());
+        botoesPanel.add(voltarMenuInicialButton);
+
+        // Botão Entrar na Fazenda
         JButton entrarFazendaButton = new JButton("Entrar na Fazenda");
         entrarFazendaButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
         entrarFazendaButton.setForeground(Color.BLACK);
@@ -72,6 +67,22 @@ public class MenuFazendaPanel extends JPanel {
         });
         botoesPanel.add(entrarFazendaButton);
 
+        // Botão Salvar Jogo
+        JButton salvarButton = new JButton("Salvar Jogo");
+        salvarButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
+        salvarButton.setForeground(Color.BLACK); // Define o texto preto para o botão
+        salvarButton.addActionListener(e -> {
+            if (jogador != null) {
+                Persistencia.salvarJogo(jogador, "jogoSalvo.dat");
+                Persistencia.salvarJogoComoTexto(jogador, "jogoSalvo.txt");
+                System.out.println("Jogo salvo com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Nenhum jogo em andamento para salvar.");
+            }
+        });
+        botoesPanel.add(salvarButton);
+
+        // Botão Listar Fazendas
         JButton listarFazendasButton = new JButton("Listar Fazendas");
         listarFazendasButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
         listarFazendasButton.setForeground(Color.BLACK);
@@ -84,12 +95,7 @@ public class MenuFazendaPanel extends JPanel {
         });
         botoesPanel.add(listarFazendasButton);
 
-        JButton voltarMenuInicialButton = new JButton("Voltar para menu inicial");
-        voltarMenuInicialButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
-        voltarMenuInicialButton.setForeground(Color.BLACK);
-        voltarMenuInicialButton.addActionListener(e -> gui.voltarParaMenuInicial());
-        botoesPanel.add(voltarMenuInicialButton);
-
+        // Botão Sair
         JButton sairButton = new JButton("Sair");
         sairButton.setBackground(new Color(255, 255, 102)); // Amarelo suave
         sairButton.setForeground(Color.BLACK);
